@@ -28,10 +28,14 @@ const authController = {
 
         const accessToken = jwt.sign(
             {
-                "UserInfo": {
-                    "username": foundUser.username,
-                    "password": foundUser.password
-                }
+                
+                "username": foundUser.username,
+                "email": foundUser.email,
+                "password": foundUser.password,
+                "profile_picture": foundUser.profile_picture,
+                "online_status": foundUser.online_status,
+                "created_at": foundUser.created_at
+                
             },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: '15min' }
@@ -39,7 +43,7 @@ const authController = {
 
         const refreshToken = jwt.sign(
             {
-                    "username": foundUser.username,
+                    "id": foundUser._id,
             },
             process.env.REFRESH_TOKEN_SECRET,
             { expiresIn: '1d' }
@@ -77,10 +81,12 @@ const authController = {
 
                 const accessToken = jwt.sign(
                     {
-                        "UserInfo": {
-                            "username": foundUser.username,
-                            "password": foundUser.password
-                        }
+                        "username": foundUser.username,
+                        "email": foundUser.email,
+                        "password": foundUser.password,
+                        "profile_picture": foundUser.profile_picture,
+                        "online_status": foundUser.online_status,
+                        "created_at": foundUser.created_at
                     },
                     process.env.ACCESS_TOKEN_SECRET,
                     { expiresIn: '15min' }

@@ -1,0 +1,16 @@
+{
+    "name": "Linkly",
+    "version": "1.0.0",
+    "main": "index.js",
+    "scripts": {
+        "start": "concurrently \"npm run server\" \"npm run client\"",
+        "server": "cd Backend && npm start",
+        "client": "cd Frontend && npm start"
+    },
+    "devDependencies": {
+        "concurrently": "^7.0.0"
+    },
+    "dependencies": {
+        "jsonwebtoken": "^9.0.2"
+    }
+}

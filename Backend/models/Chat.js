@@ -14,21 +14,21 @@ const userSchema = new mongoose.Schema({
         enum: ['chat', 'group'],
     },
 
-    members: {
-        type: [String],
-        default: [], 
-    },
+    members: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "User",
+            default: [],
+        } 
+    ],
+    messages: [
+        {
+            type: mongoose.Schema.Types.ObjectId,
+            ref: "Message",
+            default: [],
+        }
+    ],
 
-    created_at: {
-        type: Date,
-        default: Date.now,
-    },
-
-    messages: {
-        type: [String],
-        default: [], 
-    },
-
-});
+}, {timestamp: true});
 
 module.exports = mongoose.model('Chat', userSchema);

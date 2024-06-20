@@ -55,7 +55,11 @@ const userController = {
 
         const hashedPassword = await bcrypt.hash(password, 10); // salt rounds
 
-        const userObject = {username, email, "password": hashedPassword};
+        // Add a picture https://avatar.iran.liara.run/username?username=Scott+Wilson
+
+        const profile_pic = `https://avatar.iran.liara.run/username?username=${username}`
+
+        const userObject = {username, email, "password": hashedPassword, "profile_picture": profile_pic};
 
         const user = await User.create(userObject);
 
@@ -118,9 +122,9 @@ const userController = {
             return res.status(400).json({ message: 'No user found' });
         }
 
-        const result = await User.deleteOne();
+        await User.deleteOne();
 
-        const reply = `User ${result.username} deleted successfully`;
+        const reply = `User deleted successfully`;
 
         res.json(reply);
     } catch (err) {

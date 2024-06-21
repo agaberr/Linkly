@@ -58,7 +58,7 @@ const SignIn = () => {
                 
                 <Link to='/signup' className='font-normal text-gray-600 hover:underline hover:text-black hover:cursor-pointer block p-2'>Don't have an account?</Link>
                 
-                <button class="btn border-none btn-block rounded-box bg-blue-600 btn-lg hover:bg-blue-700 text-3xl mt-1 text-center text-white">Login</button>
+                <button className="btn border-none btn-block rounded-box bg-blue-600 btn-lg hover:bg-blue-700 text-3xl mt-1 text-center text-white">Login</button>
             </form>
             
           </div>

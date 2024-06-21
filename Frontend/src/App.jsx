@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
+import LandingPage from './LandingPage/LandingPage'
 
 function App() {
-  const [count, setCount] = useState(0)
 
   return (
-    <>
-
-    </>
+    <div className='p-4 h-screen flex items-center justify-center'>
+      <LandingPage />
+    </div>
   )
 }
 

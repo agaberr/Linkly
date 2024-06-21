@@ -3,12 +3,13 @@ import './App.css'
 import LandingPage from './LandingPage/LandingPage'
 import SignUp from './SignUp/SignUp'
 import SignIn from './SignIn/SignIn'
+import HomePage from './HomePage/HomePage'
 
 function App() {
 
   return (
-    <div className='p-4 h-screen flex items-center justify-center'>
-      <SignIn />
+    <div className='h-screen flex items-center justify-center'>
+      <HomePage />
     </div>
   )
 }

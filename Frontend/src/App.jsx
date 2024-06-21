@@ -17,8 +17,8 @@ function App() {
       <Routes>
         <Route path='/' element={<LandingPage />}></Route>
         <Route path='/signup' element={authUser ? <Navigate to='/home' /> : <SignUp />}></Route>
-        <Route path='/signin' element={<SignIn />}></Route>
-        <Route path='/home' element={<HomePage />}></Route>
+        <Route path='/signin' element={authUser ? <Navigate to='/home' /> : <SignIn />}></Route>
+        <Route path='/home' element={authUser ? <HomePage /> : <Navigate to={"/signin"} />}></Route>
       </Routes>
       <Toaster />
     </div>

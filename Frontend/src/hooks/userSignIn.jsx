@@ -46,6 +46,8 @@ const userSignIn = () => {
         
         setAuthUser(signInToken)
 
+        toast.success("Signed In successfully");
+
     } catch (err) {
         toast.error("Internal Server Error");
         console.log(err);

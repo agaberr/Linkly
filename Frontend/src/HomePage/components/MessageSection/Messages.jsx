@@ -3,7 +3,7 @@ import Message from './Message'
 
 const Messages = () => {
   return (
-    <div className='px-4 flex-col overflow-auto max-h-[600px]'>
+    <div className='px-4 flex-col overflow-auto max-h-[580px]'>
         <Message />
         <Message />
         <Message />
@@ -16,7 +16,6 @@ const Messages = () => {
         <Message />
         <Message />
         <Message />
-
     </div>
   )
 }

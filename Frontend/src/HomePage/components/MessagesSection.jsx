@@ -2,12 +2,13 @@ import React from 'react'
 import InfoBar from './MessageSection/InfoBar'
 import Messages from './MessageSection/Messages'
 import SendMessage from './MessageSection/SendMessage'
+import { useConversation } from '../../context/useConversation'
 
 const MessagesSection = () => {
 
-  const chatSelected = false;
+  const {selectedConversation, setSelectedConversation} = useConversation();
 
-  if (chatSelected)  
+  if (selectedConversation)  
       return (
       <div>
         <InfoBar />

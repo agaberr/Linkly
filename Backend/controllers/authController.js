@@ -8,6 +8,7 @@ dotenv.config();
 const authController = {
 
     signin: async (req, res) => {
+
         const { username, password } = req.body;
         
         if (!username || !password) {
@@ -24,6 +25,17 @@ const authController = {
 
         if (!match){
             return res.status(401).json({ message: 'Unauthorized' });
+        }
+
+        const userdata =  {
+
+            "_id": foundUser._id,    
+            "username": foundUser.username,
+            "email": foundUser.email,
+            "profile_picture": foundUser.profile_picture,
+            "online_status": foundUser.online_status,
+            "created_at": foundUser.created_at
+            
         }
 
         const accessToken = jwt.sign(
@@ -56,7 +68,7 @@ const authController = {
             maxAge: 7 * 24 * 60 * 60 * 1000
         })
 
-        res.json({ accessToken });
+        res.json({ userdata,  accessToken});
     },
     refresh: async (req, res) => {
         const cookies = req.cookies;

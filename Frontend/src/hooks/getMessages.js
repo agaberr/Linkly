@@ -5,7 +5,6 @@ import { useConversation } from '../context/useConversation'
 const getMessages = () => {
   
   const { messages, setMessages, selectedConversation } = useConversation();
-  console.log(selectedConversation._id)
   useEffect(() => {
     const getmessages = async () => {
 

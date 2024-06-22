@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import InfoBar from './MessageSection/InfoBar'
 import Messages from './MessageSection/Messages'
 import SendMessage from './MessageSection/SendMessage'
@@ -6,7 +6,25 @@ import { useConversation } from '../../context/useConversation'
 
 const MessagesSection = () => {
 
+
   const {selectedConversation, setSelectedConversation} = useConversation();
+
+  useEffect(() => {
+
+    // return back to welcome page when user is logged in again
+    return () => setSelectedConversation(null);
+  }, [setSelectedConversation]);
+
+  const ChatNotSelected = () => {
+    return (
+      <div className='flex items-center justify-center w-full h-full'>
+        <div className='px-4 text-center sm:text-2xl md:text-3xl text-gray-700 font-semibold flex flex-col items-center gap-2'>
+          <p>Please select a chat to start messaging</p>
+        </div>
+      </div>
+    )
+  }
+
 
   if (selectedConversation)  
       return (
@@ -21,14 +39,3 @@ const MessagesSection = () => {
 }
 
 export default MessagesSection;
-
-const ChatNotSelected = () => {
-  return (
-    <div className='flex items-center justify-center w-full h-full'>
-			<div className='px-4 text-center sm:text-2xl md:text-3xl text-gray-700 font-semibold flex flex-col items-center gap-2'>
-				<p>Welcome 👋 TopG</p>
-				<p>Please select a chat to message</p>
-			</div>
-		</div>
-  )
-}

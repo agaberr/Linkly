@@ -131,6 +131,24 @@ const userController = {
         console.log(err);
         res.status(500).json({ message: 'Server error' });
     }
+    },
+    getConversationUsers: async (req, res) => {
+
+        const signedUserId = req.user._id;
+        console.log(signedUserId);
+
+        try {
+            const users = await User.find({ _id: {$ne: signedUserId}}).select('-password').lean();
+    
+            if (!users?.length) {
+                return res.status(400).json({ message: 'No users found' });
+            }
+            res.json(users);
+        } catch (err) {
+            console.log(err);
+            res.status(500).json({ message: 'Server error' });
+        }
+
     }
 }
 

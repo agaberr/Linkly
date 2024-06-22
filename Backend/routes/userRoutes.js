@@ -9,11 +9,11 @@ router.route('/api/users')
     .patch(usersController.updateUser)
     .delete(usersController.deleteUser)
 
-router.route('/api/users/:id')
+router.route('/api/users/getuser/:id')
     .get(usersController.getUser)
 
-// router.route('/api/users/conversationusers')
-//     .get(authUser, usersController.getConversationUsers)
+router.route('/api/users/conversationusers')
+    .get( authUser, usersController.getConversationUsers)
 
 
 module.exports = router;

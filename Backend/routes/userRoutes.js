@@ -1,9 +1,7 @@
 const express = require('express');
 const router = express.Router();
 const usersController = require('../controllers/userControllers');
-// const verifyJWT = require('../middleware/verifyJWT')
-
-// router.use(verifyJWT);
+const authUser = require('../middleware/authUser');
 
 router.route('/api/users')
     .get(usersController.getAllUsers)
@@ -13,6 +11,9 @@ router.route('/api/users')
 
 router.route('/api/users/:id')
     .get(usersController.getUser)
+
+// router.route('/api/users/conversationusers')
+//     .get(authUser, usersController.getConversationUsers)
 
 
 module.exports = router;

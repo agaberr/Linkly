@@ -16,7 +16,7 @@ const LandingPage = () => {
           Welcome
         </h1>
         <h1 className='text-5xl font-normal text-left text-gray-900 pt-5'>
-          Ready tow
+          Ready to
         </h1>
         <h1 className='text-6xl font-bold text-left text-black pt-3 pb-7'>
           Chat with others?

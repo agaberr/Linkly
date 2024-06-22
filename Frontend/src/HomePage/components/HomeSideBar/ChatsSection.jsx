@@ -6,7 +6,6 @@ const ChatsSection = () => {
 
 
   const conversations = getConversations();
-  // console.log(conversations);
 
   return (
     <div>

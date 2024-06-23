@@ -2,9 +2,12 @@ import React, { useState } from 'react';
 import { useConversation } from '../../../context/useConversation';
 import { useSocketContext } from '../../../context/socketContext';
 
-const Chat = ({ conversation }) => {
+const Chat = ({ conversation, lastMessage }) => {
 
-  
+
+
+  // console.log(lastMessage);
+
   const { onlineUsers } = useSocketContext();
   const {selectedConversation, setSelectedConversation} = useConversation();
   const isSelected = selectedConversation?._id === conversation._id;
@@ -28,7 +31,7 @@ const Chat = ({ conversation }) => {
               {conversation.username}
             </p>
             <p className='font-normal text-gray-600'>
-              hello gaboora how are ...
+              {lastMessage}
             </p>
           </div>
         </div>

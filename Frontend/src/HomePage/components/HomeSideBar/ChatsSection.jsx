@@ -1,9 +1,11 @@
 import React, { useEffect } from 'react'
 import Chat from './Chat'
 import getConversations from '../../../hooks/getConversations'
+import getMessagesSocket from '../../../hooks/getMessagesSocket';
 
 const ChatsSection = () => {
 
+  getMessagesSocket();
 
   const conversations = getConversations();
 

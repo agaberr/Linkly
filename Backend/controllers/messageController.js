@@ -1,5 +1,6 @@
 const Message = require('../models/Message');
 const Chat = require('../models/Chat');
+const { getRecieverSocketId, getSenderSocketId, io } = require('../socket/socket');
 
 // const dotenv = require('dotenv');
 
@@ -36,9 +37,14 @@ const messageController = {
                 chat.messages.push(newMessage._id);
             }
 
-            //TODO: add socket connection here
-
             await Promise.all([newMessage.save(), chat.save()]);
+
+            const recieverSocketId = getRecieverSocketId(recieverId);
+            const senderSocketId = getSenderSocketId(senderId);
+            if (recieverSocketId) {
+                io.to(recieverSocketId).emit("newMessage", newMessage);
+                io.to(senderSocketId).emit("newMessage", newMessage);
+            }
             
             res.status(201).json({ message: newMessage })
 

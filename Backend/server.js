@@ -1,6 +1,5 @@
 require('dotenv').config();
 const express = require('express');
-const app = express();
 const path = require('path');
 const fs = require('fs');
 const cors = require('cors');
@@ -10,6 +9,7 @@ const errorHandler = require('./middleware/errorHandler');
 const corsOptions = require('./config/corsOptions');
 const connectDB = require('./config/dbConn');
 const mongoose = require('mongoose');
+const { app, server } = require('./socket/socket')
 
 console.log(process.env.NODE_ENV);
 
@@ -41,7 +41,7 @@ app.use(errorHandler);
 mongoose.connection.on('connected', () => {
 
 console.log('Mongoose is connected');
-app.listen(PORT, () => {console.log(`Server is running on port ${PORT}`)});
+server.listen(PORT, () => {console.log(`Server is running on port ${PORT}`)});
 
 });
 

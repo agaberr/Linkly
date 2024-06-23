@@ -8,6 +8,7 @@ import SignUp from './pages/SignUp/SignUp'
 import SignIn from './pages/SignIn/SignIn'
 import HomePage from './pages/HomePage/HomePage'
 import ProfilePage from './pages/ProfilePage/ProfilePage'
+import OtherProfilePage from './pages/OtherProfilePage/OtherProfilePage'
 
 function App() {
 
@@ -21,6 +22,7 @@ function App() {
         <Route path='/signin' element={authUser ? <Navigate to='/home' /> : <SignIn />}></Route>
         <Route path='/home' element={authUser ? <HomePage /> : <Navigate to={"/signin"} />}></Route>
         <Route path='/profile' element={authUser ? <ProfilePage /> : <Navigate to={"/signin"} />}></Route>
+        <Route path='/otherprofile' element={authUser ? <OtherProfilePage /> : <Navigate to={"/signin"} />}></Route>
       </Routes>
       <Toaster />
     </div>

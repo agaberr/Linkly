@@ -30,14 +30,16 @@ const MessagesSection = () => {
   }
 
 
-  if (selectedConversation)  
-      return (
+  if (selectedConversation){
+
+    return (
       <div>
         <InfoBar />
         <Messages />
         <SendMessage />
       </div>
     )
+  }
   else
     return (<ChatNotSelected />)
 }

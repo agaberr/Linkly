@@ -1,5 +1,5 @@
-import React, { useState } from 'react'
-import { useConversation } from '../../../context/useConversation'
+import React, { useState } from 'react';
+import { useConversation } from '../../../context/useConversation';
 import { useSocketContext } from '../../../context/socketContext';
 
 const Chat = ({ conversation }) => {

@@ -1,7 +1,7 @@
 import React from 'react'
 import { BiLogOut } from "react-icons/bi";
 import { toast } from "react-hot-toast";
-import userSignOut from '../../../hooks/userSignOut'
+import userSignOut from '../../../../src/hooks/userSignOut'
 
 const SignOut = () => {
 

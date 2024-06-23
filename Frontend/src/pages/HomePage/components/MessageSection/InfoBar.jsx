@@ -1,5 +1,5 @@
 import React from 'react'
-import { useConversation } from '../../../context/useConversation'
+import { useConversation } from '../../../../src/context/useConversation'
 
 const InfoBar = () => {
 

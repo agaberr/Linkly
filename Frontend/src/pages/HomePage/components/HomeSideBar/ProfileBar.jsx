@@ -1,6 +1,6 @@
 import React from 'react'
 import SignOut from './SignOut'
-import { useAuthContext } from "../../../context/AuthContext"
+import { useAuthContext } from "../../../../src/context/AuthContext"
 
 const ProfileBar = () => {
 

@@ -32,7 +32,6 @@ const ChatsSection = () => {
       const lastMessageId = getLastMessage(messages)?._id;          
       updatedLastMessages[lastMessageId] = lastMessageContent;
       setLastMessages(updatedLastMessages);
-      // console.log('updated', updatedLastMessages);
     };
 
     if (messages.length > 0) {
@@ -41,16 +40,6 @@ const ChatsSection = () => {
   }, [messages]);
 
   getMessagesSocket();
-
-  // if (messages.length > 0) {
-  //   messages.map((message) => {
-  //     console.log(lastMessages[message._id]?.content);
-  //     console.log(lastMessages[message._id]);
-  //     console.log(lastMessages);
-  //     console.log(message._id);
-  //     console.log('------------------------------------------------')
-  //   });
-  // };
 
   const chatElements = [];
   

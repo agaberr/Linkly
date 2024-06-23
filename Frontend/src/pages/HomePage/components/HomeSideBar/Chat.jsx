@@ -30,9 +30,10 @@ const Chat = ({ conversation, lastMessage }) => {
             <p className='font-bold  text-gray-900'>
               {conversation?.username}
             </p>
-            <p className='font-normal text-gray-600'>
+            {/* TODO: Add last message here */}
+            {/* <p className='font-normal text-gray-600'>
               {lastMessage}
-            </p>
+            </p> */}
           </div>
         </div>
       </div>

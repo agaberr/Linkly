@@ -110,19 +110,19 @@ const userController = {
     },
     deleteUser: async (req, res) => {
      try {
-        const { id } =  req.body;
+        const signedUserId = req.user._id;
 
-        if(!id) {
-            return res.status(400).json({ message: 'User ID is required' });
+        if(!signedUserId) {
+            return res.status(400).json({ message: 'You are not signed in to delete account' });
         }
         
-        const user = await User.findById(id).exec();
+        const user = await User.findById(signedUserId).exec();
 
         if (!user) {
             return res.status(400).json({ message: 'No user found' });
         }
 
-        await User.deleteOne();
+        await User.deleteOne({ _id: signedUserId });
 
         const reply = `User deleted successfully`;
 

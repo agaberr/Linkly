@@ -7,7 +7,7 @@ router.route('/api/users')
     .get(usersController.getAllUsers)
     .post(usersController.createUser)
     .patch(usersController.updateUser)
-    .delete(usersController.deleteUser)
+    .delete(authUser, usersController.deleteUser)
 
 router.route('/api/users/getuser/:id')
     .get(usersController.getUser)

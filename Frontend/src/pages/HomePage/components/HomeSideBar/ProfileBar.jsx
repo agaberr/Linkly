@@ -1,10 +1,16 @@
 import React from 'react'
 import SignOut from './SignOut'
 import { useAuthContext } from "../../../../context/AuthContext"
+import { useNavigate } from 'react-router-dom';
 
 const ProfileBar = () => {
 
     const { authUser } = useAuthContext();
+    const navigate = useNavigate();
+
+    const handleImgClick = () => {
+      navigate('/profile');
+    }
 
     
     return (
@@ -15,7 +21,9 @@ const ProfileBar = () => {
                 <img 
                     className='cursor-pointer'
                     src={`${authUser.userdata.profile_picture}`}
-                    alt='user avatar'/>
+                    alt='user avatar'
+                    onClick={handleImgClick}
+                    />
               </div>
             </div>
           </div>

@@ -14,7 +14,7 @@ export const SocketContextProvider = ({ children }) => {
     useEffect(() => {
         
         if (authUser) {
-            const socket = io("http://localhost:5000",{
+            const socket = io("https://linkly-iwzy.onrender.com:5000",{
                     query: {
                     userId: authUser.userdata._id
                 }});

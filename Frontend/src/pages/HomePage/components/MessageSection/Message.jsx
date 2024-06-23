@@ -1,7 +1,7 @@
 import React from 'react'
-import { useConversation } from '../../../../src/context/useConversation'
-import { useAuthContext } from '../../../../src/context/AuthContext'
-import { extractTime } from "../../../../src/utils/extractTime";
+import { useConversation } from '../../../../context/useConversation'
+import { useAuthContext } from '../../../../context/AuthContext'
+import { extractTime } from "../../../../utils/extractTime";
 
 const Message = ({ message }) => {
 

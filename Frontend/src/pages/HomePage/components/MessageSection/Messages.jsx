@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react'
 import Message from './Message'
-import getMessages from '../../../../src/hooks/getMessages'
+import getMessages from '../../../../hooks/getMessages'
 
 const Messages = () => {
   const messages = getMessages();

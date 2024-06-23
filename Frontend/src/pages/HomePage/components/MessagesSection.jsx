@@ -2,8 +2,8 @@ import React, { useEffect } from 'react'
 import InfoBar from './MessageSection/InfoBar'
 import Messages from './MessageSection/Messages'
 import SendMessage from './MessageSection/SendMessage'
-import { useConversation } from '../../../src/context/useConversation'
-import { useAuthContext } from '../../../src/context/AuthContext'
+import { useConversation } from '../../../context/useConversation'
+import { useAuthContext } from '../../../context/AuthContext'
 
 
 const MessagesSection = () => {

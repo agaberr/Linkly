@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
-import { useConversation } from '../../../../src/context/useConversation';
-import { useSocketContext } from '../../../../src/context/socketContext';
+import { useConversation } from '../../../../../src/context/useConversation';
+import { useSocketContext } from '../../../../../src/context/socketContext';
 
 const Chat = ({ conversation, lastMessage }) => {
 

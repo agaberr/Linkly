@@ -1,9 +1,10 @@
 import React, { useEffect, useState } from 'react'
 import Chat from './Chat'
-import getConversations from '../../../../src/hooks/getConversations'
-import getMessagesSocket from '../../../../src/hooks/getMessagesSocket';
-import { useConversation } from '../../../../src/context/useConversation';
-import { useUsersConversationContext } from '../../../../src/context/usersConversationContext';
+import getConversations from '../../../../hooks/getConversations'
+import getMessagesSocket from '../../../../hooks/getMessagesSocket';
+import { useConversation } from '../../../../context/useConversation';
+
+import { useUsersConversationContext } from '../../../../context/usersConversationContext';
 
 const ChatsSection = () => {
 

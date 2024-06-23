@@ -1,13 +1,13 @@
 import { useState } from 'react'
 import './App.css'
 import { Routes, Route, Navigate } from 'react-router-dom'
-import LandingPage from './LandingPage/LandingPage'
 import { Toaster } from 'react-hot-toast'
-import SignUp from './SignUp/SignUp'
-import SignIn from './SignIn/SignIn'
-import HomePage from './HomePage/HomePage'
-import ProfilePage from './ProfilePage/ProfilePage'
 import { useAuthContext } from './context/AuthContext'
+import LandingPage from './pages/LandingPage/LandingPage'
+import SignUp from './pages/SignUp/SignUp'
+import SignIn from './pages/SignIn/SignIn'
+import HomePage from './pages/HomePage/HomePage'
+import ProfilePage from './pages/ProfilePage/ProfilePage'
 
 function App() {
 

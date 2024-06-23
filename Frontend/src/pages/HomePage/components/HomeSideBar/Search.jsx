@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { IoSearch } from "react-icons/io5";
-import searchUser from "../../../../src/hooks/searchUser"
-import { useUsersConversationContext } from '../../../../src/context/usersConversationContext';
+import searchUser from "../../../../hooks/searchUser"
+import { useUsersConversationContext } from '../../../../context/usersConversationContext';
 
 
 const Search = () => {

@@ -9,7 +9,7 @@ const errorHandler = require('./middleware/errorHandler');
 const corsOptions = require('./config/corsOptions');
 const connectDB = require('./config/dbConn');
 const mongoose = require('mongoose');
-const { app, server } = require('./socket/socket')
+const { app, server } = require('./socket/socket');
 
 console.log(process.env.NODE_ENV);
 
@@ -36,6 +36,12 @@ function loadRoutes(directory) {
 const routesDirectory = path.join(__dirname, 'routes');
 loadRoutes(routesDirectory);
 
+app.use(express.static(path.join(__dirname, "..", "Frontend","dist")));
+
+app.get("*", (req, res) => {
+  res.sendFile(path.join(__dirname, "..", "Frontend", "dist", "index.html"));
+});
+
 app.use(errorHandler);
 
 mongoose.connection.on('connected', () => {
@@ -45,4 +51,6 @@ server.listen(PORT, () => {console.log(`Server is running on port ${PORT}`)});
 
 });
 
+
 module.exports = app;
+require('dotenv').config();

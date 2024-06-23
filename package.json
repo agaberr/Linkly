@@ -3,14 +3,16 @@
     "version": "1.0.0",
     "main": "index.js",
     "scripts": {
-        "start": "concurrently \"npm run server\" \"npm run client\"",
-        "server": "cd Backend && npm run dev",
-        "client": "cd Frontend && npm run dev"
+        "server": "cd Backend && nodemon server.js",
+        "start": "cd Backend && node server.js",
+        "build": "npm install --prefix Frontend && npm install --prefix Backend && npm run build --prefix Frontend"
     },
     "devDependencies": {
-        "concurrently": "^7.0.0"
+        "concurrently": "^7.0.0",
+        "nodemon": "^3.1.4"
     },
     "dependencies": {
+        "dotenv": "^16.4.5",
         "jsonwebtoken": "^9.0.2",
         "react-hot-toast": "^2.4.1",
         "react-router-dom": "^6.23.1"

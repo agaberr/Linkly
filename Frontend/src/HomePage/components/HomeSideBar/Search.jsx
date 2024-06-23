@@ -25,7 +25,7 @@ const Search = () => {
   return (
     <form
       onSubmit={handleSearchChange} 
-      className='flex items-center gap-2 mb-8 px-5'>
+      className='flex items-center gap-2 my-3 px-5'>
       <input 
         type='text'
         placeholder='Search Chats' 

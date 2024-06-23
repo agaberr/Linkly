@@ -84,7 +84,7 @@ const ChatsSection = () => {
     }
   }
   return (
-    <div>
+    <div className='overflow-auto'>
       {chatElements.length > 0 ? chatElements : <p>No conversations found.</p>}
     </div>
   );

@@ -12,7 +12,7 @@ const SignOut = () => {
   }
 
   return (
-    <div onClick ={handleSignOut}className='w-7 h-7 text-black cursor-pointer absolute mt-[665px] ml-4'>
+    <div onClick ={handleSignOut}className='w-7 h-7 text-black cursor-pointer absolute insert-y-0 end-5 mt-[-50px]'>
       <BiLogOut size={30} />
     </div>
   )

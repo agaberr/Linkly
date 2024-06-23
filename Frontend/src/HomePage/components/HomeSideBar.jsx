@@ -1,14 +1,14 @@
 import React from 'react'
 import Search from './HomeSideBar/Search'
 import ChatsSection from './HomeSideBar/ChatsSection'
-import SignOut from './HomeSideBar/SignOut'
+import ProfileBar from './HomeSideBar/ProfileBar'
 
 const HomeSideBar = () => {
   return (
     <div className='flex flex-col'>
+      <ProfileBar />
       <Search />
-        <ChatsSection />
-      <SignOut />
+      <ChatsSection/>
     </div>
   )
 }

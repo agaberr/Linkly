@@ -135,7 +135,7 @@ const userController = {
     getConversationUsers: async (req, res) => {
 
         const signedUserId = req.user._id;
-        console.log(signedUserId);
+        // console.log(signedUserId);
 
         try {
             const users = await User.find({ _id: {$ne: signedUserId}}).select('-password').lean();

@@ -32,7 +32,7 @@ const sendMessage = () => {
         }
 
     }catch(err) {
-      ast.error("Internal Server Error");
+      toast.error("Internal Server Error");
           console.log(err);
     }
   } 

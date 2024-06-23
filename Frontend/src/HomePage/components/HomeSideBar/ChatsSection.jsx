@@ -3,12 +3,17 @@ import Chat from './Chat'
 import getConversations from '../../../hooks/getConversations'
 import getMessagesSocket from '../../../hooks/getMessagesSocket';
 import { useConversation } from '../../../context/useConversation';
+import { useUsersConversationContext } from '../../../context/usersConversationContext';
 
 const ChatsSection = () => {
 
   const [lastMessages, setLastMessages] = useState({});
   const { messages } = useConversation();
-  const conversations = getConversations();
+
+  const { searchConversations } = useUsersConversationContext();
+
+  const { conversations } = getConversations();
+
 
   useEffect(() => {
     // Function to get the last message from an array of messages
@@ -47,20 +52,37 @@ const ChatsSection = () => {
   // };
 
   const chatElements = [];
-  for (let i = 0; i < conversations.length; i++) {
-    const conversation = conversations[i];
+  
+  if (searchConversations?.length > 0) {
+  for (let i = 0; i < searchConversations?.length; i++) {
+    const conversation = searchConversations[i];
     const message = messages[i];
 
     const lastMessage = lastMessages[message?._id] || 'No messages';
     chatElements.push(
       <Chat
-        key={conversation._id}
+        key={conversation?._id}
         conversation={conversation}
         lastMessage={lastMessage}
       />
     );
   }
-
+  // TODO: refactor this code
+  } else {
+    for (let i = 0; i < conversations?.length; i++) {
+      const conversation = conversations[i];
+      const message = messages[i];
+  
+      const lastMessage = lastMessages[message?._id] || 'No messages';
+      chatElements.push(
+        <Chat
+          key={conversation?._id}
+          conversation={conversation}
+          lastMessage={lastMessage}
+        />
+      );
+    }
+  }
   return (
     <div>
       {chatElements.length > 0 ? chatElements : <p>No conversations found.</p>}

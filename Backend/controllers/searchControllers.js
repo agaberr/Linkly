@@ -1,0 +1,34 @@
+const User = require('../models/User');
+
+const searchController = {
+
+    searchByUser: async (req, res) => {
+
+        const signedUserId = req.user._id;
+
+        try {
+            const keyword = req.body.keyword;
+            if (!keyword) {
+                const usersResults = await User.find({ _id: {$ne: signedUserId}}).select('-password').lean();
+                return res.status(200).json(usersResults);
+            }
+              // Search for users by username or displayName
+                const usersResults = await User.find({ username: { $regex: keyword, $options: 'i' }, _id: {$ne: signedUserId}});
+
+            // const userSuggestions = usersResults.slice(0, 10);
+
+            return res.status(200).json(usersResults);
+
+        } catch (error) {
+            console.error("Error searching by users:", error);
+            return res.status(500).json({ error: "Internal server error" });
+        }
+
+
+
+    }
+
+
+};
+
+module.exports = searchController;

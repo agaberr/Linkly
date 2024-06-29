@@ -6,7 +6,6 @@ import { useAuthContext } from '../context/AuthContext'
 const sendMessage = () => {
   
   const { messages, setMessages, selectedConversation } = useConversation();
-  // const { authUser } = AuthContext();
 
 
   const sendmessage = async (messageSent) => {

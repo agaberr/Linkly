@@ -13,7 +13,8 @@ const searchController = {
                 return res.status(200).json(usersResults);
             }
               // Search for users by username or displayName
-                const usersResults = await User.find({ username: { $regex: keyword, $options: 'i' }, _id: {$ne: signedUserId}});
+              const regex = new RegExp('^' + keyword, 'i');
+              const usersResults = await User.find({ username: regex, _id: { $ne: signedUserId } });
 
             // const userSuggestions = usersResults.slice(0, 10);
 

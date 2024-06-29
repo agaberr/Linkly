@@ -59,8 +59,8 @@ const ChatsSection = () => {
   }
   // TODO: refactor this code
   } else {
-    for (let i = 0; i < conversations?.length; i++) {
-      const conversation = conversations[i];
+    for (let i = 0; i < searchConversations?.length; i++) {
+      const conversation = searchConversations[i];
       const message = messages[i];
   
       const lastMessage = lastMessages[message?._id] || 'No messages';

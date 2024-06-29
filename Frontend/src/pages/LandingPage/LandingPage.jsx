@@ -10,7 +10,7 @@ const LandingPage = () => {
 
   return (
     <div>
-      <div className=" w-screen p-6 max-h-fit">
+      <div className=" w-screen max-h-fit">
         <header className="text-center mb-8">
           <h1 className="text-5xl font-bold text-gray-800 mb-4">Welcome to Linkly</h1>
           <h2 className="text-3xl font-semibold text-gray-600 mb-2">Ready to Chat with others?</h2>

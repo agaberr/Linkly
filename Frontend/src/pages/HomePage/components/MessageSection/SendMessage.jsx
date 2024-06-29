@@ -7,7 +7,6 @@ const SendMessage = () => {
   const [message, setMessage] = useState(null);
 
   const sendmessage = sendMessage();
-  console.log(message);
 
   const handleSendMessage = async(e) => {
     e.preventDefault();

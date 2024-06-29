@@ -57,7 +57,8 @@ const userController = {
 
         // Add a picture https://avatar.iran.liara.run/username?username=Scott+Wilson
 
-        const profile_pic = `https://avatar.iran.liara.run/username?username=${username}`
+        // const profile_pic = `https://avatar.iran.liara.run/username?username=${username}`
+        const profile_pic = `https://eu.ui-avatars.com/api/?name=${username}`
 
         const userObject = {username, email, "password": hashedPassword, "profile_picture": profile_pic};
 

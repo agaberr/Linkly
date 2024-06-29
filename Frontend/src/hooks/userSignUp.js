@@ -7,7 +7,7 @@ const userSignUp = () => {
 
     const { setAuthUser } = useAuthContext();
 
-    const signUp = async({username, email, password}) => {
+    const signUp = async({username, bio, email, password}) => {
 
     if (!username || !password || !email) {
         toast.error("Please fill all fields");
@@ -20,7 +20,7 @@ const userSignUp = () => {
     }
   
       username.trim();
-      username.trim();
+      password.trim();
   
       if (!username || !password) {
         toast.error("Please fill all fields");
@@ -34,7 +34,7 @@ const userSignUp = () => {
           headers: {
             "Content-Type": "application/json",
           },
-          body: JSON.stringify({ username, email, password }),
+          body: JSON.stringify({ username, bio, email, password }),
         });
   
         if (!createUser.ok) {

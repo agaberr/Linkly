@@ -43,10 +43,9 @@ const ProfilePage = () => {
           {authUser.userdata.username}
         </h1>
 
-         {/* TODO: Add BIO */}
-        {/* <p className='text-xl text-gray-600 mb-4'>
-          Bio
-        </p> */}
+        <p className='text-xl text-gray-600 mb-4'>
+          {authUser.userdata.bio}
+        </p>
 
           <div
             onClick={handleDeleteAccountButton} 

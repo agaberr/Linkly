@@ -34,7 +34,8 @@ const authController = {
             "email": foundUser.email,
             "profile_picture": foundUser.profile_picture,
             "online_status": foundUser.online_status,
-            "created_at": foundUser.created_at
+            "created_at": foundUser.created_at,
+            "bio": foundUser.bio
             
         }
 
@@ -46,8 +47,8 @@ const authController = {
                 "password": foundUser.password,
                 "profile_picture": foundUser.profile_picture,
                 "online_status": foundUser.online_status,
-                "created_at": foundUser.created_at
-                
+                "created_at": foundUser.created_at,
+                "bio": foundUser.bio
             },
             process.env.ACCESS_TOKEN_SECRET,
             { expiresIn: '15min' }
@@ -98,7 +99,9 @@ const authController = {
                         "password": foundUser.password,
                         "profile_picture": foundUser.profile_picture,
                         "online_status": foundUser.online_status,
-                        "created_at": foundUser.created_at
+                        "created_at": foundUser.created_at,
+                        "bio": foundUser.bio
+
                     },
                     process.env.ACCESS_TOKEN_SECRET,
                     { expiresIn: '15min' }

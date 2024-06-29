@@ -9,6 +9,7 @@ const SignUp = () => {
 
       username: '',
       email: '',
+      bio: '',
       password: '',
 
     });
@@ -41,6 +42,19 @@ const SignUp = () => {
                       className="input input-bordered w-full max-w-xs bg-white text-black"
                       value={userInputs.username}
                       onChange={(e) => setUserInputs({...userInputs, username: e.target.value})} 
+                      />
+                </div>
+
+                <div>
+                    <label className='label p-1 pt-5'>
+                        <span className='text-base label-text text-gray-600'>Bio</span>
+                    </label>
+                    <input 
+                      type="text"
+                      placeholder="Enter Bio"
+                      className="input input-bordered w-full max-w-xs bg-white text-black"
+                      value={userInputs.bio}
+                      onChange={(e) => setUserInputs({...userInputs, bio: e.target.value})} 
                       />
                 </div>
                 

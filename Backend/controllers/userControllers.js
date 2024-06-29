@@ -41,7 +41,7 @@ const userController = {
     },
     createUser: async (req, res) => {
         try {
-        const { username, email, password } = req.body;
+        const { username, bio, email, password } = req.body;
 
         if (!username || !email || !password) {
             return res.status(400).json({ message: 'Please enter all fields' });
@@ -58,9 +58,9 @@ const userController = {
         // Add a picture https://avatar.iran.liara.run/username?username=Scott+Wilson
 
         // const profile_pic = `https://avatar.iran.liara.run/username?username=${username}`
-        const profile_pic = `https://eu.ui-avatars.com/api/?name=${username}`
+        const profile_pic = `https://eu.ui-avatars.com/api/?name=${username}&background=random&bold=true`
 
-        const userObject = {username, email, "password": hashedPassword, "profile_picture": profile_pic};
+        const userObject = {username, bio, email, "password": hashedPassword, "profile_picture": profile_pic};
 
         const user = await User.create(userObject);
 

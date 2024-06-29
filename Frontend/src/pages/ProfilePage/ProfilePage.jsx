@@ -146,7 +146,7 @@ const ProfilePage = () => {
                       onChange={(e) => setUserInputs({...userInputs, password: e.target.value})} 
                       />
                 </div>                
-                <button class="btn border-none btn-block rounded-box bg-blue-600 btn-lg hover:bg-blue-700 text-3xl mt-1 text-center text-white ml-[-12px]">Sign Up</button>
+                <button class="btn border-none btn-block rounded-box bg-blue-600 btn-lg hover:bg-blue-700 text-3xl mt-1 text-center text-white ml-[-12px]">Update</button>
             </form>
         )}
         </div>

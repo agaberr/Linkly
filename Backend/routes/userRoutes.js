@@ -6,7 +6,7 @@ const authUser = require('../middleware/authUser');
 router.route('/api/users')
     .get(usersController.getAllUsers)
     .post(usersController.createUser)
-    .patch(usersController.updateUser)
+    .patch(authUser, usersController.updateUser)
     .delete(authUser, usersController.deleteUser)
 
 router.route('/api/users/getuser/:id')

@@ -20,7 +20,7 @@ const ProfileBar = () => {
               <div className='w-12 rounded-full '>
                 <img 
                     className='cursor-pointer'
-                    src={`${authUser.userdata.profile_picture}`}
+                    src={`${authUser.userdata?.profile_picture}`}
                     alt='user avatar'
                     onClick={handleImgClick}
                     />

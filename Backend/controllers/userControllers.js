@@ -76,13 +76,15 @@ const userController = {
     },
     updateUser: async (req, res) => {
         try {
-        const { id, username, email, password } = req.body;
+
+        const signedUserId = req.user._id;
+        const { username, bio, email, password } = req.body;
         
-        if (!id || !username || !email) {
+        if (!username || !email || !bio) {
             return res.status(400).json({ message: 'Please enter all fields' });
         }
 
-        const user = await User.findById(id).exec();
+        const user = await User.findById(signedUserId);
 
         if (!user) {
             return res.status(400).json({ message: 'No user found' });
@@ -90,20 +92,25 @@ const userController = {
 
         const duplicate = await User.findOne({ username }).lean().exec();
 
-        if (duplicate && duplicate._id !== id) {
+        if (duplicate && !duplicate._id.equals(signedUserId)) {
             return res.status(409).json({ message: 'User already exists' });
         }
 
         user.username = username;
         user.email = email;
+        user.bio = bio;
+        //FIXME: doesn't work here
+        user.profile_pic = `https://eu.ui-avatars.com/api/?name=${username}&background=random&bold=true`
 
         if (password) {
             user.password = await bcrypt.hash(password, 10); // salt rounds
         }
 
-        const updatedUser = await user.save();
+        await user.save();
 
-        res.json({ message: `${updatedUser.username} updated successfully` })
+        const userdata = await User.findById(signedUserId).select('-password').lean();
+
+        res.json({ userdata })
     } catch (err) {
         console.log(err);
         res.status(500).json({ message: 'Server error' });

@@ -58,8 +58,7 @@ const userSignUp = () => {
           },
           body: JSON.stringify({ username, password }),
         });
-        // const statusCode = signIn.status;
-        // console.log("Status code:", statusCode);
+
   
         if (!signIn.ok) {
           toast.error("Couldn't login successfully");

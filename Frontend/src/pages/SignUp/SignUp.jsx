@@ -49,13 +49,16 @@ const SignUp = () => {
                     <label className='label p-1 pt-5'>
                         <span className='text-base label-text text-gray-600'>Bio</span>
                     </label>
+                    <label className="input input-bordered w-full max-w-xs bg-white text-black flex items-center gap-2">
                     <input 
-                      type="text"
-                      placeholder="Enter Bio"
-                      className="input input-bordered w-full max-w-xs bg-white text-black"
-                      value={userInputs.bio}
-                      onChange={(e) => setUserInputs({...userInputs, bio: e.target.value})} 
-                      />
+                        type="text"
+                        placeholder="Enter Bio"
+                        className="grow"
+                        value={userInputs.bio}
+                        onChange={(e) => setUserInputs({...userInputs, bio: e.target.value})} 
+                        />
+                      <span className="badge badge-info">Optional</span>
+                    </label>
                 </div>
                 
                 <div>

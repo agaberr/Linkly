@@ -23,7 +23,7 @@ const ProfilePage = () => {
     <div className='flex sm:w-[1600px] md:h-[700px] h-screen pl-20 pt-20'>
       <div className='flex gap-2 flex-col items-center mr-20'>
         <div className='avatar mb-2'>
-          <div className='w-30 rounded-full'>
+          <div className='w-60 rounded-full'>
             <img 
               src={`${authUser.userdata.profile_picture}`}
               alt='user avatar'

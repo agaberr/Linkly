@@ -26,7 +26,7 @@ const OtherProfilePage = () => {
     <div className='flex sm:w-[1600px] md:h-[700px] h-screen items-center justify-center'>
       <div className='flex gap-2 flex-col items-center mr-20'>
         <div className='avatar mb-2'>
-          <div className='w-30 rounded-full'>
+          <div className='w-60 rounded-full'>
             <img 
               src={`${conversation.profile_picture}`}
               alt='user avatar'
@@ -37,10 +37,9 @@ const OtherProfilePage = () => {
           {conversation.username}
         </h1>
 
-         {/* TODO: Add BIO */}
-        {/* <p className='text-xl text-gray-600 mb-4'>
-          Bio
-        </p> */}
+        <p className='text-xl text-gray-600 mb-4'>
+          {conversation.bio}
+        </p>
         <p className='text-gray-500 text-l font-semibold'>
           Active Now
         </p>

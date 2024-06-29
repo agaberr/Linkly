@@ -1,14 +1,19 @@
 import React, { useEffect } from 'react';
 import { useNavigate, useLocation } from 'react-router-dom';
 import { useConversation } from '../../../../context/useConversation';
+import { useSocketContext } from '../../../../context/socketContext';
 
 const InfoBar = () => {
 
   const navigate = useNavigate();
   const location = useLocation();
 
+  const { onlineUsers } = useSocketContext();
+
+
   const {selectedConversation} = useConversation();
 
+  const isOnlineUser = onlineUsers.includes(selectedConversation?._id)
 
   const onProfileBarClick = () => {
     navigate('/otherprofile', { state: { selectedConversation }})
@@ -32,7 +37,7 @@ const InfoBar = () => {
               {selectedConversation.username}
             </p>
             <p className='font-normal text-gray-600'>
-              Active now
+              {isOnlineUser ? "Active now" : "Not Active"}
             </p>
           </div>
         </div>

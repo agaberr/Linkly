@@ -1,6 +1,7 @@
 import React, { useEffect } from 'react'
 import { useLocation, useNavigate } from "react-router-dom"
 import { useConversation } from '../../context/useConversation'
+import { useSocketContext } from '../../context/socketContext';
 
 const OtherProfilePage = () => {
   
@@ -8,8 +9,10 @@ const OtherProfilePage = () => {
   const location = useLocation();
 
   const {selectedConversation, setSelectedConversation} = useConversation();
+  const { onlineUsers } = useSocketContext();
 
   const conversation = location.state?.selectedConversation || selectedConversation;
+  const isOnlineUser = onlineUsers.includes(conversation?._id)
 
 
   useEffect(() => {
@@ -41,7 +44,7 @@ const OtherProfilePage = () => {
           {conversation.bio}
         </p>
         <p className='text-gray-500 text-l font-semibold'>
-          Active Now
+          {isOnlineUser ? 'Active Now' : 'Not Active'}
         </p>
         <button
           onClick={handleClickChatButton}

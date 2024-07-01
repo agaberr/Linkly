@@ -15,9 +15,13 @@ function App() {
   const { authUser } = useAuthContext();
 
   return (
-    <div className='h-screen flex items-center justify-center'>
+    <div className='flex items-center justify-center'>
+      <div className='h-screen'>
+        <Routes>
+          <Route path='/' element={<LandingPage />}></Route>
+        </Routes>
+      </div>
       <Routes>
-        <Route path='/' element={<LandingPage />}></Route>
         <Route path='/signup' element={authUser ? <Navigate to='/home' /> : <SignUp />}></Route>
         <Route path='/signin' element={authUser ? <Navigate to='/home' /> : <SignIn />}></Route>
         <Route path='/home' element={authUser ? <HomePage /> : <Navigate to={"/signin"} />}></Route>
